@@ -1,960 +1,208 @@
+
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Honda Motos Import - Concesionario Oficial de Importación & Accesorios</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- FontAwesome icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Font Inter -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        honda: {
-                            red: '#E60012',
-                            darkRed: '#CC0000',
-                            black: '#121212',
-                            darkGray: '#1A1A1A',
-                            lightGray: '#F5F5F7',
-                            accent: '#333333'
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        /* Custom scrollbar and sleek styling */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #1a1a1a;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #E60012;
-            border-radius: 4px;
-        }
-        .hero-bg {
-            background: linear-gradient(180deg, rgba(18, 18, 18, 0.6) 0%, rgba(18, 18, 18, 0.95) 100%), 
-                        url('https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
-        }
-        .glass-card {
-            background: rgba(26, 26, 26, 0.8);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-        }
-        .honda-gradient {
-            background: linear-gradient(135deg, #E60012 0%, #99000B 100%);
-        }
-        .badge-red {
-            background-color: #E60012;
-            color: white;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Motos Honda importadas y accesorios en Costa Rica.">
+  <title>Honda Import | Motos y accesorios</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-[#121212] text-gray-100 font-sans antialiased selection:bg-honda-red selection:text-white">
+<body>
+  <div class="topline">IMPORTACIÓN DE MOTOCICLETAS · COSTA RICA
+    <span>Asesoría personalizada</span>
+  </div>
 
-    <!-- HEADER & NAVBAR -->
-    <header class="sticky top-0 z-40 bg-[#121212]/95 backdrop-blur-md border-b border-neutral-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
-                
-                <!-- Logo -->
-                <a href="#" class="flex items-center gap-3 group">
-                    <div class="bg-honda-red text-white p-2 rounded-lg group-hover:scale-105 transition-transform">
-                        <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24">
-                            <!-- Honda Wing Minimalist Representation -->
-                            <path d="M21.6 3c-3.2 0-8 2.3-11.2 5.5C8 10.9 6.2 13.9 5.2 17.5c1.8-1.2 4.1-1.9 6.6-1.9 4.3 0 7.8 2.2 7.8 5 0 .2 0 .4-.1.6 2.8-2 4.5-5.2 4.5-8.7 0-5.2-1.1-9.5-2.4-9.5zm-5.8 4.2c2 0 4.1 1.1 5.4 2.8-.8-2.6-3.1-4.8-5.4-5.2.2.8.1 1.7 0 2.4z"/>
-                            <path d="M11.8 17.1c-2.1 0-4 .6-5.4 1.5.8-2.7 2.2-5 4.3-7.1 2.2-2.2 5.4-3.9 7.9-4.3-.8 1.8-1.3 3.9-1.3 6.1 0 1.3.2 2.6.6 3.8-1.8-.1-4-.1-6.1 0z"/>
-                        </svg>
-                    </div>
-                    <div class="flex flex-col">
-                        <span class="text-xl font-black tracking-widest text-white leading-none">HONDA</span>
-                        <span class="text-xs font-semibold text-honda-red tracking-wider">IMPORT MOTOS</span>
-                    </div>
-                </a>
+  <header class="header">
+    <a class="brand" href="#inicio">
+      <span class="brand-wing">翼</span>
+      <span class="brand-name">HONDA<span>IMPORT</span></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">☰</button>
+    <nav id="navMenu">
+      <a href="#motos">Motocicletas</a>
+      <a href="#accesorios">Accesorios</a>
+      <a href="#proceso">Cómo importar</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <a class="header-cta" href="#contacto">Cotizar ahora ↗</a>
+  </header>
 
-                <!-- Desktop Navigation -->
-                <nav class="hidden lg:flex items-center space-x-8 font-medium text-sm tracking-wide">
-                    <a href="#inicio" class="text-white hover:text-honda-red transition-colors">Inicio</a>
-                    <a href="#motos" class="text-gray-300 hover:text-honda-red transition-colors">Catálogo Motos</a>
-                    <a href="#accesorios" class="text-gray-300 hover:text-honda-red transition-colors">Accesorios & Equipamiento</a>
-                    <a href="#importacion" class="text-gray-300 hover:text-honda-red transition-colors">Cotizar Importación</a>
-                    <a href="#contacto" class="text-gray-300 hover:text-honda-red transition-colors">Contacto</a>
-                </nav>
-
-                <!-- Actions: Cart & CTA -->
-                <div class="flex items-center gap-4">
-                    <!-- Cart Icon Button -->
-                    <button id="cart-btn" onclick="toggleCart()" class="relative p-2.5 rounded-full bg-neutral-800 text-gray-200 hover:bg-neutral-700 transition-colors focus:outline-none">
-                        <i class="fa-solid fa-cart-shopping text-lg"></i>
-                        <span id="cart-count" class="absolute -top-1 -right-1 bg-honda-red text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center shadow-lg">0</span>
-                    </button>
-
-                    <!-- Mobile Menu Button -->
-                    <button id="menu-btn" onclick="toggleMobileMenu()" class="lg:hidden p-2 rounded-lg text-gray-400 hover:text-white hover:bg-neutral-800">
-                        <i class="fa-solid fa-bars text-xl"></i>
-                    </button>
-                </div>
-            </div>
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-shade"></div>
+      <div class="hero-content">
+        <p class="eyebrow">━ TU PRÓXIMA AVENTURA COMIENZA AQUÍ</p>
+        <h1>LA PASIÓN<br>NO TIENE <em>LÍMITES.</em></h1>
+        <p class="hero-copy">
+          Motos Honda importadas y accesorios para quienes viven cada kilómetro con intensidad.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-red" href="#motos">Explorar motocicletas →</a>
+          <a class="text-link" href="#proceso">Conocé cómo funciona ↗</a>
         </div>
-
-        <!-- Mobile Navigation Drawer -->
-        <div id="mobile-menu" class="hidden lg:hidden bg-honda-darkGray border-b border-neutral-800 px-4 pt-2 pb-6 space-y-3">
-            <a href="#inicio" onclick="toggleMobileMenu()" class="block py-2 text-white font-medium hover:text-honda-red">Inicio</a>
-            <a href="#motos" onclick="toggleMobileMenu()" class="block py-2 text-gray-300 font-medium hover:text-honda-red">Catálogo Motos</a>
-            <a href="#accesorios" onclick="toggleMobileMenu()" class="block py-2 text-gray-300 font-medium hover:text-honda-red">Accesorios & Equipamiento</a>
-            <a href="#importacion" onclick="toggleMobileMenu()" class="block py-2 text-gray-300 font-medium hover:text-honda-red">Cotizar Importación</a>
-            <a href="#contacto" onclick="toggleMobileMenu()" class="block py-2 text-gray-300 font-medium hover:text-honda-red">Contacto</a>
+        <div class="hero-stats">
+          <div><strong>01</strong><span>Asesoría cercana</span></div>
+          <div><strong>02</strong><span>Opciones de importación</span></div>
+          <div><strong>03</strong><span>Pasión por las motos</span></div>
         </div>
-    </header>
-
-    <!-- HERO SECTION -->
-    <section id="inicio" class="relative hero-bg min-h-[90vh] flex items-center justify-center pt-10 pb-20 px-4">
-        <div class="max-w-7xl mx-auto text-center z-10">
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-honda-red/20 border border-honda-red/40 text-honda-red text-xs sm:text-sm font-semibold tracking-wider uppercase mb-6">
-                <i class="fa-solid fa-flag-checkered"></i> Importación Directa desde EE.UU, Japón y Europa
-            </div>
-            <h1 class="text-4xl sm:text-6xl md:text-7xl font-black tracking-tight text-white uppercase mb-6 leading-none">
-                Siente la Libertad. <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-honda-red to-red-400">Poder Honda Exclusivo.</span>
-            </h1>
-            <p class="max-w-3xl mx-auto text-base sm:text-xl text-gray-300 mb-10 font-normal leading-relaxed">
-                Traemos los modelos más emblemáticos, superdeportivas, adventure y accesorios originales de Honda. Garantía internacional y homologación lista para rodar.
-            </p>
-            
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="#motos" class="w-full sm:w-auto px-8 py-4 bg-honda-red hover:bg-honda-darkRed text-white font-bold rounded-xl shadow-lg shadow-honda-red/30 transition-all transform hover:-translate-y-1 text-center">
-                    Ver Catálogo de Motos <i class="fa-solid fa-arrow-right ml-2"></i>
-                </a>
-                <a href="#importacion" class="w-full sm:w-auto px-8 py-4 bg-neutral-800 hover:bg-neutral-700 text-white border border-neutral-600 font-bold rounded-xl transition-all text-center">
-                    Cotizar Modelo Especial <i class="fa-solid fa-calculator ml-2"></i>
-                </a>
-            </div>
-
-            <!-- Stats Bar -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 pt-10 border-t border-neutral-800/80 max-w-4xl mx-auto">
-                <div class="text-center">
-                    <span class="block text-2xl sm:text-4xl font-extrabold text-white">100%</span>
-                    <span class="text-xs sm:text-sm text-gray-400">Garantía Honda Original</span>
-                </div>
-                <div class="text-center">
-                    <span class="block text-2xl sm:text-4xl font-extrabold text-white">+150</span>
-                    <span class="text-xs sm:text-sm text-gray-400">Motos Importadas</span>
-                </div>
-                <div class="text-center">
-                    <span class="block text-2xl sm:text-4xl font-extrabold text-white">15 Días</span>
-                    <span class="text-xs sm:text-sm text-gray-400">Envío Exprés Marítimo/Aéreo</span>
-                </div>
-                <div class="text-center">
-                    <span class="block text-2xl sm:text-4xl font-extrabold text-white">24/7</span>
-                    <span class="text-xs sm:text-sm text-gray-400">Soporte Técnico Especializado</span>
-                </div>
-            </div>
-        </div>
+      </div>
+      <div class="hero-label">RIDE YOUR<br>OWN STORY
+        <span>HONDA IMPORT</span>
+      </div>
     </section>
 
-    <!-- MOTOS CATALOG SECTION -->
-    <section id="motos" class="py-20 bg-[#121212] border-t border-neutral-900">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-xs font-bold text-honda-red tracking-widest uppercase mb-2">Modelos Seleccionados</h2>
-                <p class="text-3xl sm:text-4xl font-extrabold text-white">Catálogo de Motocicletas Importadas</p>
-                <p class="text-gray-400 mt-2 max-w-xl mx-auto">Modelos de alta gama Honda disponibles para entrega inmediata o reserva de importación.</p>
-            </div>
-
-            <!-- Category Filters -->
-            <div class="flex flex-wrap justify-center gap-2 sm:gap-4 mb-12">
-                <button onclick="filterMotos('todos')" class="filter-moto-btn active px-5 py-2.5 rounded-full text-sm font-semibold transition-all bg-honda-red text-white" data-cat="todos">
-                    Todas las Categorías
-                </button>
-                <button onclick="filterMotos('Deportiva')" class="filter-moto-btn px-5 py-2.5 rounded-full text-sm font-semibold transition-all bg-neutral-800 text-gray-300 hover:bg-neutral-700" data-cat="Deportiva">
-                    <i class="fa-solid fa-gauge-high mr-1"></i> Deportivas
-                </button>
-                <button onclick="filterMotos('Adventure')" class="filter-moto-btn px-5 py-2.5 rounded-full text-sm font-semibold transition-all bg-neutral-800 text-gray-300 hover:bg-neutral-700" data-cat="Adventure">
-                    <i class="fa-solid fa-compass mr-1"></i> Adventure
-                </button>
-                <button onclick="filterMotos('Scooter')" class="filter-moto-btn px-5 py-2.5 rounded-full text-sm font-semibold transition-all bg-neutral-800 text-gray-300 hover:bg-neutral-700" data-cat="Scooter">
-                    <i class="fa-solid fa-city mr-1"></i> Scooter / Urbana
-                </button>
-                <button onclick="filterMotos('Off-Road')" class="filter-moto-btn px-5 py-2.5 rounded-full text-sm font-semibold transition-all bg-neutral-800 text-gray-300 hover:bg-neutral-700" data-cat="Off-Road">
-                    <i class="fa-solid fa-mountain mr-1"></i> Enduro / Off-Road
-                </button>
-            </div>
-
-            <!-- Moto Cards Grid -->
-            <div id="motos-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Javascript rendered items -->
-            </div>
-        </div>
+    <section class="intro section-wrap">
+      <div>
+        <p class="eyebrow dark">MÁS QUE UNA MOTOCICLETA</p>
+        <h2>HECHA PARA<br><em>MOVERTE.</em></h2>
+      </div>
+      <p class="intro-copy">
+        Buscamos la Honda que va con tu estilo: ciudad, carretera, aventura o velocidad.
+        Te acompañamos durante la cotización e importación, con información clara en cada etapa.
+      </p>
     </section>
 
-    <!-- ACCESSORIES & GEAR SECTION -->
-    <section id="accesorios" class="py-20 bg-honda-darkGray relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
-                <div>
-                    <h2 class="text-xs font-bold text-honda-red tracking-widest uppercase mb-2">Equipamiento & Performance</h2>
-                    <p class="text-3xl sm:text-4xl font-extrabold text-white">Accesorios y Repuestos Originales</p>
-                </div>
-                <p class="text-gray-400 mt-2 md:mt-0 max-w-md">Equípate con lo mejor. Cascos de alta gama, sistemas de escape Akrapovič y repuestos Pro Honda.</p>
-            </div>
-
-            <!-- Accessories Grid -->
-            <div id="accesorios-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- JS populated -->
-            </div>
+    <section class="catalog section-wrap" id="motos">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow dark">ENCONTRÁ TU ESTILO</p>
+          <h2>MODELOS <em>DESTACADOS</em></h2>
         </div>
+        <p>Una selección para inspirar tu próxima ruta.</p>
+      </div>
+
+      <div class="filters">
+        <button class="filter active" data-filter="all">Todas</button>
+        <button class="filter" data-filter="sport">Sport</button>
+        <button class="filter" data-filter="adventure">Aventura</button>
+        <button class="filter" data-filter="street">Street</button>
+      </div>
+
+      <div class="bike-grid">
+        <article class="bike-card" data-category="sport">
+          <div class="bike-image">
+            <img src="https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=1000&q=85" alt="Motocicleta deportiva" loading="lazy">
+            <span class="tag">SPORT</span>
+            <button class="heart" data-bike="Honda CBR" aria-label="Consultar Honda CBR">↗</button>
+          </div>
+          <div class="bike-info">
+            <div><h3>Honda CBR</h3><p>ADRENALINA EN CADA CURVA</p></div>
+            <span class="bike-num">01</span>
+          </div>
+          <div class="bike-bottom">
+            <span>Consultar versión y año</span>
+            <button class="quote-btn" data-bike="Honda CBR">Solicitar precio →</button>
+          </div>
+        </article>
+
+        <article class="bike-card" data-category="adventure">
+          <div class="bike-image">
+            <img src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=1000&q=85" alt="Motocicleta de aventura" loading="lazy">
+            <span class="tag">AVENTURA</span>
+            <button class="heart" data-bike="Honda Africa Twin" aria-label="Consultar Honda Africa Twin">↗</button>
+          </div>
+          <div class="bike-info">
+            <div><h3>Honda Africa Twin</h3><p>LISTA PARA IR MÁS LEJOS</p></div>
+            <span class="bike-num">02</span>
+          </div>
+          <div class="bike-bottom">
+            <span>Consultar versión y año</span>
+            <button class="quote-btn" data-bike="Honda Africa Twin">Solicitar precio →</button>
+          </div>
+        </article>
+
+        <article class="bike-card" data-category="street">
+          <div class="bike-image">
+            <img src="https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&w=1000&q=85" alt="Motocicleta urbana" loading="lazy">
+            <span class="tag">STREET</span>
+            <button class="heart" data-bike="Honda CB" aria-label="Consultar Honda CB">↗</button>
+          </div>
+          <div class="bike-info">
+            <div><h3>Honda CB</h3><p>ESTILO PARA TODOS LOS DÍAS</p></div>
+            <span class="bike-num">03</span>
+          </div>
+          <div class="bike-bottom">
+            <span>Consultar versión y año</span>
+            <button class="quote-btn" data-bike="Honda CB">Solicitar precio →</button>
+          </div>
+        </article>
+      </div>
+      <p class="disclaimer">
+        Imágenes ilustrativas. Modelos, precios y disponibilidad sujetos a confirmación.
+      </p>
     </section>
 
-    <!-- IMPORT CALCULATOR SECTION -->
-    <section id="importacion" class="py-20 bg-[#121212] relative overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                
-                <div class="lg:col-span-5">
-                    <span class="text-honda-red text-sm font-bold tracking-widest uppercase">Servicio a la Medida</span>
-                    <h2 class="text-3xl sm:text-5xl font-black text-white mt-2 mb-6 leading-tight">
-                        ¿Buscas una Honda Específica? <br>
-                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-honda-red">Nosotros la Traemos.</span>
-                    </h2>
-                    <p class="text-gray-300 mb-6 leading-relaxed">
-                        Cotiza en tiempo real la importación de cualquier modelo Honda directo desde las subastas y concesionarios de Estados Unidos, Japón o Europa. Nos encargamos de todo el trámite aduanero y transporte.
-                    </p>
-                    
-                    <ul class="space-y-4 mb-8 text-sm text-gray-300">
-                        <li class="flex items-center gap-3">
-                            <span class="w-6 h-6 rounded-full bg-honda-red/20 text-honda-red flex items-center justify-center font-bold text-xs"><i class="fa-solid fa-check"></i></span>
-                            Inspección mecánica técnica completa en origen.
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <span class="w-6 h-6 rounded-full bg-honda-red/20 text-honda-red flex items-center justify-center font-bold text-xs"><i class="fa-solid fa-check"></i></span>
-                            Seguro internacional de transporte todo riesgo.
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <span class="w-6 h-6 rounded-full bg-honda-red/20 text-honda-red flex items-center justify-center font-bold text-xs"><i class="fa-solid fa-check"></i></span>
-                            Nacionalización, homologación e impuestos incluidos.
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Interactive Calculator Form -->
-                <div class="lg:col-span-7">
-                    <div class="glass-card p-6 sm:p-8 rounded-2xl border border-neutral-800 shadow-2xl">
-                        <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                            <i class="fa-solid fa-calculator text-honda-red"></i> Calculadora Estimada de Importación
-                        </h3>
-                        
-                        <form id="import-form" onsubmit="calculateImport(event)" class="space-y-4">
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                <div>
-                                    <label class="block text-xs font-semibold text-gray-400 mb-1">Modelo Honda</label>
-                                    <input type="text" id="imp-model" required placeholder="Ej. CBR600RR, Gold Wing" class="w-full bg-neutral-900 border border-neutral-700 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-honda-red text-sm">
-                                </div>
-                                <div>
-                                    <label class="block text-xs font-semibold text-gray-400 mb-1">Origen de la Moto</label>
-                                    <select id="imp-origin" class="w-full bg-neutral-900 border border-neutral-700 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-honda-red text-sm">
-                                        <option value="us">Estados Unidos (USA)</option>
-                                        <option value="jp">Japón</option>
-                                        <option value="eu">Europa</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                                <div>
-                                    <label class="block text-xs font-semibold text-gray-400 mb-1">Año de Fabricación</label>
-                                    <input type="number" id="imp-year" min="1990" max="2026" value="2023" required class="w-full bg-neutral-900 border border-neutral-700 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-honda-red text-sm">
-                                </div>
-                                <div>
-                                    <label class="block text-xs font-semibold text-gray-400 mb-1">Estado</label>
-                                    <select id="imp-condition" class="w-full bg-neutral-900 border border-neutral-700 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-honda-red text-sm">
-                                        <option value="new">Nueva (0 km)</option>
-                                        <option value="used">Usada Certificada</option>
-                                    </select>
-                                </div>
-                                <div>
-                                    <label class="block text-xs font-semibold text-gray-400 mb-1">Precio Moto ($ USD)</label>
-                                    <input type="number" id="imp-price" min="1000" step="500" value="8500" required class="w-full bg-neutral-900 border border-neutral-700 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-honda-red text-sm">
-                                </div>
-                            </div>
-
-                            <button type="submit" class="w-full bg-honda-red hover:bg-honda-darkRed text-white font-bold py-3.5 rounded-lg transition-colors mt-2 shadow-lg shadow-honda-red/20">
-                                Calcular Costos de Importación
-                            </button>
-                        </form>
-
-                        <!-- Import Result Card (Hidden by Default) -->
-                        <div id="import-result" class="hidden mt-6 p-4 rounded-xl bg-neutral-900/90 border border-neutral-700">
-                            <h4 class="text-sm font-bold text-gray-300 mb-3 flex justify-between items-center">
-                                Desglose Estimado <span class="text-xs text-honda-red">Tarifas Aprox.</span>
-                            </h4>
-                            <div class="space-y-2 text-xs text-gray-400">
-                                <div class="flex justify-between"><span>Valor Moto:</span> <span id="res-base" class="text-white font-medium">$0</span></div>
-                                <div class="flex justify-between"><span>Flete Internacional & Seguro:</span> <span id="res-freight" class="text-white font-medium">$0</span></div>
-                                <div class="flex justify-between"><span>Aranceles Impuestos Aduaneros:</span> <span id="res-taxes" class="text-white font-medium">$0</span></div>
-                                <div class="flex justify-between"><span>Gastos Nacionalización y Tramitación:</span> <span id="res-fees" class="text-white font-medium">$0</span></div>
-                                <hr class="border-neutral-800 my-2">
-                                <div class="flex justify-between text-base font-extrabold text-white">
-                                    <span>Total Estimado Puesta en Agencia:</span>
-                                    <span id="res-total" class="text-honda-red">$0</span>
-                                </div>
-                            </div>
-                            <button onclick="requestCustomQuote()" class="w-full mt-4 bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-2.5 rounded-lg text-xs tracking-wider uppercase transition-colors flex items-center justify-center gap-2">
-                                <i class="fa-brands fa-whatsapp text-lg"></i> Solicitar Asesor Vía WhatsApp
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+    <section class="accessories" id="accesorios">
+      <div class="accessory-photo"></div>
+      <div class="accessory-content">
+        <p class="eyebrow">EQUIPÁ TU PRÓXIMA RUTA</p>
+        <h2>LOS DETALLES<br>HACEN AL <em>VIAJERO.</em></h2>
+        <p>Accesorios y equipo para acompañarte en cada salida. Consultá disponibilidad y compatibilidad.</p>
+        <div class="accessory-list">
+          <div><span>01</span><strong>Protección y seguridad</strong><b>↗</b></div>
+          <div><span>02</span><strong>Maletas y equipaje</strong><b>↗</b></div>
+          <div><span>03</span><strong>Estilo y rendimiento</strong><b>↗</b></div>
         </div>
+        <a class="btn btn-light" href="#contacto">Consultar accesorios →</a>
+      </div>
     </section>
 
-    <!-- FOOTER & CONTACT -->
-    <footer id="contacto" class="bg-black border-t border-neutral-900 pt-16 pb-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
-                
-                <!-- Col 1: Brand Info -->
-                <div>
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="bg-honda-red text-white p-1.5 rounded-md">
-                            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
-                                <path d="M21.6 3c-3.2 0-8 2.3-11.2 5.5C8 10.9 6.2 13.9 5.2 17.5c1.8-1.2 4.1-1.9 6.6-1.9 4.3 0 7.8 2.2 7.8 5 0 .2 0 .4-.1.6 2.8-2 4.5-5.2 4.5-8.7 0-5.2-1.1-9.5-2.4-9.5zm-5.8 4.2c2 0 4.1 1.1 5.4 2.8-.8-2.6-3.1-4.8-5.4-5.2.2.8.1 1.7 0 2.4z"/>
-                            </svg>
-                        </div>
-                        <span class="text-xl font-extrabold text-white">HONDA IMPORT</span>
-                    </div>
-                    <p class="text-xs text-gray-400 leading-relaxed mb-4">
-                        Especialistas en importación directa de motocicletas Honda de alta gama, superdeportivas y repuestos genuinos. Calidad e ingeniería japonesa a tu alcance.
-                    </p>
-                    <div class="flex space-x-3 text-gray-400">
-                        <a href="#" class="w-8 h-8 rounded-full bg-neutral-900 flex items-center justify-center hover:bg-honda-red hover:text-white transition-colors"><i class="fa-brands fa-facebook-f text-xs"></i></a>
-                        <a href="#" class="w-8 h-8 rounded-full bg-neutral-900 flex items-center justify-center hover:bg-honda-red hover:text-white transition-colors"><i class="fa-brands fa-instagram text-xs"></i></a>
-                        <a href="#" class="w-8 h-8 rounded-full bg-neutral-900 flex items-center justify-center hover:bg-honda-red hover:text-white transition-colors"><i class="fa-brands fa-youtube text-xs"></i></a>
-                    </div>
-                </div>
-
-                <!-- Col 2: Navigation Links -->
-                <div>
-                    <h4 class="text-sm font-bold text-white uppercase tracking-wider mb-4 border-l-2 border-honda-red pl-2">Navegación</h4>
-                    <ul class="space-y-2 text-xs text-gray-400">
-                        <li><a href="#inicio" class="hover:text-white transition-colors">Inicio</a></li>
-                        <li><a href="#motos" class="hover:text-white transition-colors">Catálogo de Motos</a></li>
-                        <li><a href="#accesorios" class="hover:text-white transition-colors">Accesorios y Equipamiento</a></li>
-                        <li><a href="#importacion" class="hover:text-white transition-colors">Calculadora de Importación</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Garantía & Servicio Técnico</a></li>
-                    </ul>
-                </div>
-
-                <!-- Col 3: Contact Details -->
-                <div>
-                    <h4 class="text-sm font-bold text-white uppercase tracking-wider mb-4 border-l-2 border-honda-red pl-2">Contacto & Showroom</h4>
-                    <ul class="space-y-3 text-xs text-gray-400">
-                        <li class="flex items-start gap-2">
-                            <i class="fa-solid fa-location-dot text-honda-red mt-0.5"></i>
-                            <span>Av. Las Américas #890, Distrito Automotriz, Ciudad</span>
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <i class="fa-solid fa-phone text-honda-red"></i>
-                            <span>+1 (800) 555-HONDA / +52 (55) 1234-5678</span>
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <i class="fa-solid fa-envelope text-honda-red"></i>
-                            <span>ventas@hondaimportmotos.com</span>
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <i class="fa-solid fa-clock text-honda-red"></i>
-                            <span>Lun - Sáb: 9:00 AM - 7:00 PM</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Col 4: Newsletter -->
-                <div>
-                    <h4 class="text-sm font-bold text-white uppercase tracking-wider mb-4 border-l-2 border-honda-red pl-2">Novedades & Novedades</h4>
-                    <p class="text-xs text-gray-400 mb-3">Suscríbete para recibir notificaciones de embarques nuevos e ingresos exclusivos.</p>
-                    <form onsubmit="subscribeNewsletter(event)" class="space-y-2">
-                        <input type="email" required placeholder="Tu correo electrónico" class="w-full bg-neutral-900 border border-neutral-800 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-honda-red">
-                        <button type="submit" class="w-full bg-neutral-800 hover:bg-honda-red text-white text-xs font-bold py-2 rounded-lg transition-colors uppercase tracking-wider">
-                            Suscribirme
-                        </button>
-                    </form>
-                </div>
-
-            </div>
-
-            <!-- Disclaimer legal -->
-            <div class="border-t border-neutral-900 pt-6 text-center text-[10px] text-gray-500">
-                <p>Honda, el ala dorada y sus respectivos logotipos son marcas registradas propiedad de Honda Motor Co., Ltd. Este sitio web es de un distribuidor e importador especializado independiente.</p>
-                <p class="mt-1">&copy; 2026 Honda Import Motos. Todos los derechos reservados.</p>
-            </div>
+    <section class="process section-wrap" id="proceso">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow dark">SENCILLO Y TRANSPARENTE</p>
+          <h2>DE TU IDEA A <em>LA RUTA.</em></h2>
         </div>
-    </footer>
+        <p>Te explicamos el proceso antes de tomar una decisión.</p>
+      </div>
+      <div class="steps">
+        <article><span>01</span><h3>Contanos qué buscás</h3><p>Modelo, año, presupuesto y uso que le darás.</p></article>
+        <article><span>02</span><h3>Recibí tu cotización</h3><p>Revisamos opciones y costos estimados de importación.</p></article>
+        <article><span>03</span><h3>Coordiná los detalles</h3><p>Confirmamos condiciones, tiempos y requisitos por escrito.</p></article>
+      </div>
+    </section>
 
-    <!-- CART SLIDE-OUT MODAL -->
-    <div id="cart-modal" class="fixed inset-0 z-50 overflow-hidden hidden" aria-labelledby="slide-over-title" role="dialog" aria-modal="true">
-        <!-- Backdrop -->
-        <div class="fixed inset-0 bg-black/80 backdrop-blur-sm transition-opacity" onclick="toggleCart()"></div>
-
-        <div class="fixed inset-y-0 right-0 pl-10 max-w-full flex">
-            <div class="w-screen max-w-md bg-honda-darkGray text-white border-l border-neutral-800 shadow-2xl flex flex-col">
-                <!-- Cart Header -->
-                <div class="p-6 bg-black/40 border-b border-neutral-800 flex items-center justify-between">
-                    <h3 class="text-lg font-bold flex items-center gap-2">
-                        <i class="fa-solid fa-cart-shopping text-honda-red"></i> Carrito de Reservas & Compras
-                    </h3>
-                    <button onclick="toggleCart()" class="text-gray-400 hover:text-white p-1">
-                        <i class="fa-solid fa-xmark text-xl"></i>
-                    </button>
-                </div>
-
-                <!-- Cart Items Container -->
-                <div id="cart-items-container" class="flex-1 overflow-y-auto p-6 space-y-4">
-                    <!-- Dynamic rendering -->
-                </div>
-
-                <!-- Cart Summary & Actions -->
-                <div class="p-6 bg-black/60 border-t border-neutral-800 space-y-4">
-                    <div class="flex justify-between items-center text-sm">
-                        <span class="text-gray-400">Subtotal</span>
-                        <span id="cart-subtotal" class="font-extrabold text-white text-lg">$0 USD</span>
-                    </div>
-                    <p class="text-[11px] text-gray-400">Los impuestos y costos de envío final se confirmarán con un asesor.</p>
-                    <button onclick="checkoutCart()" class="w-full py-3.5 bg-honda-red hover:bg-honda-darkRed text-white font-bold rounded-xl shadow-lg transition-colors uppercase tracking-wider text-xs">
-                        Procesar Cotización / Pedido
-                    </button>
-                </div>
-            </div>
+    <section class="contact" id="contacto">
+      <div class="contact-inner">
+        <div>
+          <p class="eyebrow">HABLEMOS DE MOTOS</p>
+          <h2>¿LISTO PARA<br>ENCONTRAR <em>LA TUYA?</em></h2>
+          <p>Escribinos y contanos qué modelo tenés en mente.</p>
         </div>
+        <form id="contactForm">
+          <label for="name">Tu nombre</label>
+          <input id="name" name="name" placeholder="¿Cómo te llamás?" required>
+          <label for="interest">¿Qué te interesa?</label>
+          <select id="interest" name="interest">
+            <option>Motocicleta importada</option>
+            <option>Accesorios</option>
+            <option>Ambos</option>
+            <option>Asesoría general</option>
+          </select>
+          <label for="message">Contanos un poco más</label>
+          <textarea id="message" name="message" rows="3" placeholder="Modelo, presupuesto aproximado, dudas..."></textarea>
+          <button class="btn btn-red form-submit" type="submit">Preparar mensaje ↗</button>
+          <small>Se abrirá WhatsApp para que revisés el mensaje antes de enviarlo.</small>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <a class="brand footer-brand" href="#inicio">
+      <span class="brand-wing">翼</span><span class="brand-name">HONDA<span>IMPORT</span></span>
+    </a>
+    <p>Pasión por las dos ruedas. Atención en Costa Rica.</p>
+    <div class="footer-links">
+      <a href="#motos">Motocicletas</a><a href="#accesorios">Accesorios</a><a href="#contacto">Contacto</a>
     </div>
+    <small>Honda Import es una tienda independiente y no representa necesariamente a un distribuidor oficial de Honda. HONDA y sus marcas pertenecen a sus respectivos titulares.</small>
+    <p class="copyright">© <span id="year"></span> Honda Import · Sitio demostrativo</p>
+  </footer>
 
-    <!-- MOTO DETAILS MODAL -->
-    <div id="moto-modal" class="fixed inset-0 z-50 overflow-y-auto hidden">
-        <div class="min-h-screen px-4 text-center flex items-center justify-center">
-            <!-- Modal Overlay -->
-            <div class="fixed inset-0 bg-black/80 backdrop-blur-md transition-opacity" onclick="closeMotoModal()"></div>
-
-            <div class="inline-block w-full max-w-3xl my-8 text-left align-middle transition-all transform bg-honda-darkGray border border-neutral-800 rounded-2xl shadow-2xl overflow-hidden relative z-10 text-white">
-                <button onclick="closeMotoModal()" class="absolute top-4 right-4 z-20 bg-black/50 hover:bg-honda-red text-white w-8 h-8 rounded-full flex items-center justify-center transition-colors">
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
-
-                <div id="moto-modal-content">
-                    <!-- Populated dynamically via JS -->
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- TOAST NOTIFICATION -->
-    <div id="toast" class="fixed bottom-5 right-5 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none">
-        <div class="bg-neutral-900 border border-honda-red text-white px-5 py-3 rounded-xl shadow-2xl flex items-center gap-3">
-            <div class="w-8 h-8 rounded-full bg-honda-red/20 text-honda-red flex items-center justify-center">
-                <i class="fa-solid fa-check text-sm"></i>
-            </div>
-            <div>
-                <p id="toast-title" class="font-bold text-xs text-white">¡Añadido con éxito!</p>
-                <p id="toast-msg" class="text-[11px] text-gray-400">El producto se agregó a tu carrito.</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- JAVASCRIPT LOGIC -->
-    <script>
-        // DATA SOURCES
-        const MOTOS_DATA = [
-            {
-                id: 'm1',
-                name: 'Honda CBR1000RR-R Fireblade SP',
-                category: 'Deportiva',
-                price: 28500,
-                year: '2024',
-                cc: '1000 cc',
-                power: '217 HP',
-                img: 'https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&w=800&q=80',
-                desc: 'La cúspide de la tecnología de superdeportivas de circuito. Desarrollada con aerodinámica derivada directamente de la MotoGP HRC.',
-                specs: {
-                    engine: '4 cilindros en línea DOHC, refrigeración líquida',
-                    brakes: 'Brembo Stylema ABS en curva',
-                    transmission: '6 velocidades con Quickshifter bi-direccional',
-                    weight: '201 kg'
-                }
-            },
-            {
-                id: 'm2',
-                name: 'Honda CRF1100L Africa Twin Adventure',
-                category: 'Adventure',
-                price: 18900,
-                year: '2024',
-                cc: '1084 cc',
-                power: '102 HP',
-                img: 'https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=800&q=80',
-                desc: 'Diseñada para cruzar continentes. Suspensión electrónica Showa EERA y transmisión de doble embrague DCT opcional.',
-                specs: {
-                    engine: 'Bicilíndrico en paralelo Unicam 8V',
-                    brakes: 'Doble disco flotante 310mm con pinzas radials',
-                    transmission: 'Manual 6 vel / Opción DCT',
-                    weight: '238 kg'
-                }
-            },
-            {
-                id: 'm3',
-                name: 'Honda CB650R Neo Sports Café',
-                category: 'Deportiva',
-                price: 10400,
-                year: '2024',
-                cc: '649 cc',
-                power: '94 HP',
-                img: 'https://images.unsplash.com/photo-1609630875171-b1321377ee65?auto=format&fit=crop&w=800&q=80',
-                desc: 'Estilo minimalista desnudo con un rabioso motor tetracilíndrico en línea. Incluye embrague electrónico Honda E-Clutch.',
-                specs: {
-                    engine: '4 cilindros en línea, 16 válvulas',
-                    brakes: 'Doble disco con pinzas Nissin de 4 pistones',
-                    transmission: '6 marchas con E-Clutch',
-                    weight: '202 kg'
-                }
-            },
-            {
-                id: 'm4',
-                name: 'Honda X-ADV 750',
-                category: 'Scooter',
-                price: 14200,
-                year: '2024',
-                cc: '745 cc',
-                power: '58.6 HP',
-                img: 'https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&w=800&q=80',
-                desc: 'El primer crossover SUV de dos ruedas. Combina la comodidad de una gran scooter con la versatilidad Off-Road.',
-                specs: {
-                    engine: 'Bicilíndrico en paralelo SOHC 8V',
-                    brakes: 'ABS de doble canal desconectable',
-                    transmission: 'Automática DCT de 6 velocidades',
-                    weight: '236 kg'
-                }
-            },
-            {
-                id: 'm5',
-                name: 'Honda CRF300L Rally',
-                category: 'Off-Road',
-                price: 7200,
-                year: '2024',
-                cc: '286 cc',
-                power: '27 HP',
-                img: 'https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=800&q=80',
-                desc: 'Inspirada en el Rally Dakar. Ligera, ágil y preparada para aventurarse en cualquier camino extremo.',
-                specs: {
-                    engine: 'Monocilíndrico DOHC refrigerado por líquido',
-                    brakes: 'Discos lobulados hidráulicos con ABS',
-                    transmission: '6 velocidades con embrague antirrebote',
-                    weight: '153 kg'
-                }
-            },
-            {
-                id: 'm6',
-                name: 'Honda Navi 110 Custom Spec',
-                category: 'Scooter',
-                price: 2450,
-                year: '2025',
-                cc: '109 cc',
-                power: '8 HP',
-                img: 'https://images.unsplash.com/photo-1609630875171-b1321377ee65?auto=format&fit=crop&w=800&q=80',
-                desc: 'Diversión pura para la ciudad. Mezcla el diseño de una moto deportiva con la facilidad de manejo de una scooter.',
-                specs: {
-                    engine: 'Monocilíndrico 4 tiempos eSP',
-                    brakes: 'Tambor con sistema combinado CBS',
-                    transmission: 'Automática V-Matic',
-                    weight: '101 kg'
-                }
-            }
-        ];
-
-        const ACCESORIOS_DATA = [
-            {
-                id: 'a1',
-                name: 'Casco Honda Racing HRC Carbon Edition',
-                category: 'Cascos',
-                price: 680,
-                img: 'https://images.unsplash.com/photo-1558611848-73f7eb4001a1?auto=format&fit=crop&w=500&q=80',
-                desc: 'Fibra de carbono ultraligera, certificación ECE 22.06 y gráfica oficial Honda HRC.'
-            },
-            {
-                id: 'a2',
-                name: 'Chaqueta Honda Touring Adventure Drystar',
-                category: 'Indumentaria',
-                price: 420,
-                img: 'https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=500&q=80',
-                desc: 'Impermeable, con protecciones certificadas en hombros, codos y espalda.'
-            },
-            {
-                id: 'a3',
-                name: 'Escape Completo Akrapovič CBR1000RR-R Titán',
-                category: 'Performance',
-                price: 2150,
-                img: 'https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&w=500&q=80',
-                desc: 'Incremento de potencia +7.2 HP y reducción de peso de 4.8 kg en aleación de titanio.'
-            },
-            {
-                id: 'a4',
-                name: 'Maleteros Aluminio Pro Honda x GIVI 48L',
-                category: 'Equipaje',
-                price: 890,
-                img: 'https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=500&q=80',
-                desc: 'Juego de maletas laterales de aluminio de alta resistencia con cerradura única.'
-            },
-            {
-                id: 'a5',
-                name: 'Aceite Pro Honda GN4 10W-30 (Pack 4L)',
-                category: 'Mantenimiento',
-                price: 65,
-                img: 'https://images.unsplash.com/photo-1609630875171-b1321377ee65?auto=format&fit=crop&w=500&q=80',
-                desc: 'Lubricante mineral prémium formulado especialmente para motores de 4 tiempos Honda.'
-            },
-            {
-                id: 'a6',
-                name: 'Guantes de Cuero Honda Repsol Replica',
-                category: 'Indumentaria',
-                price: 135,
-                img: 'https://images.unsplash.com/photo-1558611848-73f7eb4001a1?auto=format&fit=crop&w=500&q=80',
-                desc: 'Protección de nudillos en carbono y refuerzo de kevlar en las palmas.'
-            }
-        ];
-
-        // CART STATE
-        let cart = [];
-
-        // RENDER MOTOS
-        function renderMotos(items) {
-            const grid = document.getElementById('motos-grid');
-            grid.innerHTML = '';
-
-            items.forEach(item => {
-                const card = document.createElement('div');
-                card.className = "bg-honda-darkGray border border-neutral-800 rounded-2xl overflow-hidden hover:border-honda-red/50 transition-all group flex flex-col justify-between";
-                card.innerHTML = `
-                    <div>
-                        <div class="relative h-56 overflow-hidden bg-neutral-900">
-                            <img src="${item.img}" alt="${item.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/800x600/1a1a1a/ffffff?text=Honda+Moto'">
-                            <span class="absolute top-3 left-3 bg-honda-red text-white text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-md tracking-wider shadow">
-                                ${item.category}
-                            </span>
-                            <span class="absolute top-3 right-3 bg-black/70 backdrop-blur-md text-gray-300 text-xs font-bold px-2.5 py-1 rounded-md">
-                                Mod. ${item.year}
-                            </span>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-white group-hover:text-honda-red transition-colors mb-2">${item.name}</h3>
-                            <p class="text-xs text-gray-400 mb-4 line-clamp-2">${item.desc}</p>
-                            
-                            <!-- Badges/Specs summary -->
-                            <div class="grid grid-cols-2 gap-2 mb-6 text-xs text-gray-300">
-                                <div class="bg-neutral-900 p-2 rounded-lg flex items-center gap-2">
-                                    <i class="fa-solid fa-motorcycle text-honda-red"></i>
-                                    <span>${item.cc}</span>
-                                </div>
-                                <div class="bg-neutral-900 p-2 rounded-lg flex items-center gap-2">
-                                    <i class="fa-solid fa-bolt text-honda-red"></i>
-                                    <span>${item.power}</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="px-6 pb-6 pt-0 flex items-center justify-between border-t border-neutral-800/60 pt-4">
-                        <div>
-                            <span class="block text-[10px] text-gray-400 uppercase tracking-wider">Precio Importación</span>
-                            <span class="text-2xl font-black text-white">$${item.price.toLocaleString()} <span class="text-xs text-gray-400 font-normal">USD</span></span>
-                        </div>
-                        <div class="flex gap-2">
-                            <button onclick="openMotoModal('${item.id}')" class="p-2.5 rounded-xl bg-neutral-800 hover:bg-neutral-700 text-white transition-colors" title="Ver Detalles">
-                                <i class="fa-solid fa-eye text-sm"></i>
-                            </button>
-                            <button onclick="addToCart('${item.id}', 'moto')" class="px-4 py-2.5 rounded-xl bg-honda-red hover:bg-honda-darkRed text-white font-bold text-xs uppercase tracking-wider transition-colors shadow-md shadow-honda-red/20">
-                                Reservar
-                            </button>
-                        </div>
-                    </div>
-                `;
-                grid.appendChild(card);
-            });
-        }
-
-        // RENDER ACCESORIOS
-        function renderAccesorios(items) {
-            const grid = document.getElementById('accesorios-grid');
-            grid.innerHTML = '';
-
-            items.forEach(item => {
-                const card = document.createElement('div');
-                card.className = "bg-neutral-900/90 border border-neutral-800 rounded-xl p-4 flex flex-col justify-between hover:border-neutral-700 transition-all";
-                card.innerHTML = `
-                    <div>
-                        <div class="h-40 rounded-lg overflow-hidden bg-black/40 mb-4">
-                            <img src="${item.img}" alt="${item.name}" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/500x500/1a1a1a/ffffff?text=Honda+Accessory'">
-                        </div>
-                        <span class="text-[10px] text-honda-red font-bold uppercase tracking-widest">${item.category}</span>
-                        <h4 class="text-sm font-bold text-white mt-1 mb-2">${item.name}</h4>
-                        <p class="text-xs text-gray-400 mb-4">${item.desc}</p>
-                    </div>
-                    <div class="flex items-center justify-between border-t border-neutral-800 pt-3">
-                        <span class="text-lg font-black text-white">$${item.price.toLocaleString()} USD</span>
-                        <button onclick="addToCart('${item.id}', 'accesorio')" class="p-2 rounded-lg bg-honda-red hover:bg-honda-darkRed text-white text-xs font-bold transition-colors">
-                            <i class="fa-solid fa-plus mr-1"></i> Añadir
-                        </button>
-                    </div>
-                `;
-                grid.appendChild(card);
-            });
-        }
-
-        // FILTER MOTOS
-        function filterMotos(cat) {
-            document.querySelectorAll('.filter-moto-btn').forEach(btn => {
-                btn.classList.remove('bg-honda-red', 'text-white');
-                btn.classList.add('bg-neutral-800', 'text-gray-300');
-            });
-
-            const activeBtn = document.querySelector(`.filter-moto-btn[data-cat="${cat}"]`);
-            if (activeBtn) {
-                activeBtn.classList.remove('bg-neutral-800', 'text-gray-300');
-                activeBtn.classList.add('bg-honda-red', 'text-white');
-            }
-
-            if (cat === 'todos') {
-                renderMotos(MOTOS_DATA);
-            } else {
-                const filtered = MOTOS_DATA.filter(m => m.category === cat);
-                renderMotos(filtered);
-            }
-        }
-
-        // MOTO DETAIL MODAL
-        function openMotoModal(id) {
-            const moto = MOTOS_DATA.find(m => m.id === id);
-            if (!moto) return;
-
-            const modalContent = document.getElementById('moto-modal-content');
-            modalContent.innerHTML = `
-                <div class="grid grid-cols-1 md:grid-cols-2">
-                    <div class="h-64 md:h-full bg-black relative">
-                        <img src="${moto.img}" alt="${moto.name}" class="w-full h-full object-cover">
-                        <div class="absolute inset-0 bg-gradient-to-t from-honda-darkGray via-transparent to-transparent md:hidden"></div>
-                    </div>
-                    <div class="p-6 md:p-8 flex flex-col justify-between">
-                        <div>
-                            <span class="inline-block bg-honda-red text-white text-[10px] font-bold uppercase px-2 py-0.5 rounded mb-3">
-                                ${moto.category} - Importación Directa
-                            </span>
-                            <h2 class="text-2xl font-black text-white mb-2">${moto.name}</h2>
-                            <p class="text-2xl font-extrabold text-honda-red mb-4">$${moto.price.toLocaleString()} USD</p>
-                            
-                            <p class="text-xs text-gray-300 mb-6 leading-relaxed">${moto.desc}</p>
-                            
-                            <h4 class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">Ficha Técnica Destacada</h4>
-                            <div class="space-y-2 text-xs text-gray-300 mb-6">
-                                <div class="flex justify-between border-b border-neutral-800 pb-1">
-                                    <span class="text-gray-500">Motor:</span> <span>${moto.specs.engine}</span>
-                                </div>
-                                <div class="flex justify-between border-b border-neutral-800 pb-1">
-                                    <span class="text-gray-500">Transmisión:</span> <span>${moto.specs.transmission}</span>
-                                </div>
-                                <div class="flex justify-between border-b border-neutral-800 pb-1">
-                                    <span class="text-gray-500">Frenos:</span> <span>${moto.specs.brakes}</span>
-                                </div>
-                                <div class="flex justify-between border-b border-neutral-800 pb-1">
-                                    <span class="text-gray-500">Peso en orden de marcha:</span> <span>${moto.specs.weight}</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="flex gap-3">
-                            <button onclick="addToCart('${moto.id}', 'moto'); closeMotoModal();" class="flex-1 bg-honda-red hover:bg-honda-darkRed text-white font-bold py-3 rounded-xl text-xs uppercase tracking-wider transition-colors">
-                                Reservar esta Moto
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            `;
-
-            document.getElementById('moto-modal').classList.remove('hidden');
-        }
-
-        function closeMotoModal() {
-            document.getElementById('moto-modal').classList.add('hidden');
-        }
-
-        // CART LOGIC
-        function addToCart(id, type) {
-            let item;
-            if (type === 'moto') {
-                item = MOTOS_DATA.find(m => m.id === id);
-            } else {
-                item = ACCESORIOS_DATA.find(a => a.id === id);
-            }
-
-            if (!item) return;
-
-            const existing = cart.find(ci => ci.id === id);
-            if (existing) {
-                existing.qty += 1;
-            } else {
-                cart.push({ ...item, qty: 1, type });
-            }
-
-            updateCartUI();
-            showToast('Producto Agregado', `${item.name} se añadió a tu reserva.`);
-        }
-
-        function updateCartQuantity(id, delta) {
-            const item = cart.find(ci => ci.id === id);
-            if (!item) return;
-
-            item.qty += delta;
-            if (item.qty <= 0) {
-                cart = cart.filter(ci => ci.id !== id);
-            }
-            updateCartUI();
-        }
-
-        function updateCartUI() {
-            const countElem = document.getElementById('cart-count');
-            const totalQty = cart.reduce((acc, ci) => acc + ci.qty, 0);
-            countElem.textContent = totalQty;
-
-            const container = document.getElementById('cart-items-container');
-            container.innerHTML = '';
-
-            if (cart.length === 0) {
-                container.innerHTML = `
-                    <div class="text-center py-12 text-gray-500">
-                        <i class="fa-solid fa-cart-flatbed text-4xl mb-3"></i>
-                        <p class="text-sm">Tu carrito está vacío.</p>
-                    </div>
-                `;
-            } else {
-                cart.forEach(ci => {
-                    const itemElem = document.createElement('div');
-                    itemElem.className = "flex items-center justify-between bg-neutral-900 p-3 rounded-xl border border-neutral-800";
-                    itemElem.innerHTML = `
-                        <div class="flex items-center gap-3">
-                            <img src="${ci.img}" class="w-12 h-12 object-cover rounded-lg bg-black" onerror="this.src='https://placehold.co/100x100/1a1a1a/ffffff?text=Item'">
-                            <div>
-                                <h5 class="text-xs font-bold text-white line-clamp-1">${ci.name}</h5>
-                                <span class="text-xs font-semibold text-honda-red">$${(ci.price * ci.qty).toLocaleString()} USD</span>
-                            </div>
-                        </div>
-                        <div class="flex items-center gap-2 bg-neutral-800 rounded-lg p-1">
-                            <button onclick="updateCartQuantity('${ci.id}', -1)" class="w-6 h-6 flex items-center justify-center text-xs text-gray-300 hover:text-white">-</button>
-                            <span class="text-xs font-bold text-white px-1">${ci.qty}</span>
-                            <button onclick="updateCartQuantity('${ci.id}', 1)" class="w-6 h-6 flex items-center justify-center text-xs text-gray-300 hover:text-white">+</button>
-                        </div>
-                    `;
-                    container.appendChild(itemElem);
-                });
-            }
-
-            const subtotal = cart.reduce((acc, ci) => acc + (ci.price * ci.qty), 0);
-            document.getElementById('cart-subtotal').textContent = `$${subtotal.toLocaleString()} USD`;
-        }
-
-        function toggleCart() {
-            const modal = document.getElementById('cart-modal');
-            modal.classList.toggle('hidden');
-        }
-
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
-        }
-
-        function checkoutCart() {
-            if (cart.length === 0) {
-                alert('Añade al menos un producto o motocicleta para cotizar.');
-                return;
-            }
-
-            let msg = "Hola Honda Import, deseo cotizar el siguiente pedido:\n\n";
-            cart.forEach(item => {
-                msg += `- ${item.name} (x${item.qty}) - $${(item.price * item.qty).toLocaleString()} USD\n`;
-            });
-
-            const subtotal = cart.reduce((acc, ci) => acc + (ci.price * ci.qty), 0);
-            msg += `\nTotal Estimado: $${subtotal.toLocaleString()} USD`;
-
-            const encodedMsg = encodeURIComponent(msg);
-            window.open(`https://wa.me/525512345678?text=${encodedMsg}`, '_blank');
-        }
-
-        // IMPORT CALCULATOR LOGIC
-        function calculateImport(e) {
-            e.preventDefault();
-
-            const price = parseFloat(document.getElementById('imp-price').value) || 0;
-            const origin = document.getElementById('imp-origin').value;
-            const condition = document.getElementById('imp-condition').value;
-
-            // Simple estimation formula
-            let freight = origin === 'jp' ? 1200 : (origin === 'eu' ? 1400 : 800);
-            let taxRate = condition === 'new' ? 0.22 : 0.18;
-            
-            let taxes = (price + freight) * taxRate;
-            let agencyFees = 650;
-
-            let total = price + freight + taxes + agencyFees;
-
-            document.getElementById('res-base').textContent = `$${price.toLocaleString()} USD`;
-            document.getElementById('res-freight').textContent = `$${freight.toLocaleString()} USD`;
-            document.getElementById('res-taxes').textContent = `$${Math.round(taxes).toLocaleString()} USD`;
-            document.getElementById('res-fees').textContent = `$${agencyFees.toLocaleString()} USD`;
-            document.getElementById('res-total').textContent = `$${Math.round(total).toLocaleString()} USD`;
-
-            document.getElementById('import-result').classList.remove('hidden');
-        }
-
-        function requestCustomQuote() {
-            const model = document.getElementById('imp-model').value;
-            const year = document.getElementById('imp-year').value;
-            const origin = document.getElementById('imp-origin').options[document.getElementById('imp-origin').selectedIndex].text;
-            const total = document.getElementById('res-total').textContent;
-
-            const text = `Hola, me interesa importar el modelo Honda ${model} (Año ${year}) desde ${origin}. Vi una cotización estimada en la web de ${total}. ¿Me ayudan con los detalles?`;
-            window.open(`https://wa.me/525512345678?text=${encodeURIComponent(text)}`, '_blank');
-        }
-
-        // TOAST NOTIFICATION
-        function showToast(title, message) {
-            const toast = document.getElementById('toast');
-            document.getElementById('toast-title').textContent = title;
-            document.getElementById('toast-msg').textContent = message;
-
-            toast.classList.remove('translate-y-20', 'opacity-0');
-            
-            setTimeout(() => {
-                toast.classList.add('translate-y-20', 'opacity-0');
-            }, 3000);
-        }
-
-        function subscribeNewsletter(e) {
-            e.preventDefault();
-            showToast('¡Suscrito!', 'Recibirás nuestro catálogo mensual de importaciones.');
-            e.target.reset();
-        }
-
-        // INITIALIZE APP
-        window.onload = function() {
-            renderMotos(MOTOS_DATA);
-            renderAccesorios(ACCESORIOS_DATA);
-            updateCartUI();
-        };
-    </script>
+  <script src="script.js"></script>
 </body>
 </html>
